@@ -1,6 +1,7 @@
 // Đối tượng lưu trữ bản dịch cho EN và VI
 const translations = {
   en: {
+    nav_home: "Home",
     nav_objective: "Career Objective",
     nav_education: "Education",
     nav_experience: "Work Experience",
@@ -90,6 +91,7 @@ const translations = {
     contact_required: "Please fill out all required fields."
   },
   vi: {
+    nav_home: "Trang chủ",
     nav_objective: "Mục tiêu nghề nghiệp",
     nav_education: "Học vấn",
     nav_experience: "Kinh nghiệm làm việc",

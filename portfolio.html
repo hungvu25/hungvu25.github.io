@@ -17,16 +17,12 @@
   <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 </head>
 <body>
+    <!-- Home Anchor for Navigation -->
+    <div id="home"></div>
     <!-- Background Video -->
-    <video id="bg-video" src="assets/background.mp4" autoplay loop playsinline></video>
-    <script>
-      document.addEventListener('DOMContentLoaded', function() {
-        var bgVideo = document.getElementById('bg-video');
-        if (bgVideo) {
-          bgVideo.volume = 0.3; // Giảm âm lượng xuống 15%
-        }
-      });
-    </script>
+    <video id="bg-video" src="assets/background.mp4" autoplay loop muted playsinline></video>
+    <!-- Background Audio (hidden) -->
+    <audio id="bg-audio" src="assets/background.mp3" loop preload="auto"></audio>
     <!-- Navigation Menu -->
     <nav id="main-nav">
       <ul>
@@ -42,6 +38,11 @@
         <li id="lang-switcher-menu">
           <button class="lang-btn" data-lang="en">EN</button> |
           <button class="lang-btn" data-lang="vi">VI</button>
+        </li>
+        <li id="bg-audio-menu-btn">
+          <button id="bg-audio-toggle" aria-label="Toggle background audio" style="background:none;border:none;cursor:pointer;color:#fff;font-size:1.3em;padding:4px 8px;">
+            <i id="bg-audio-icon" class="fas fa-volume-mute"></i>
+          </button>
         </li>
       </ul>
     </nav>
@@ -469,6 +470,27 @@
         modal.style.display = 'none';
       }
     }
+
+    // Background audio toggle logic
+    document.addEventListener('DOMContentLoaded', function() {
+      var audio = document.getElementById('bg-audio');
+      var btn = document.getElementById('bg-audio-toggle');
+      var icon = document.getElementById('bg-audio-icon');
+      if (btn && audio && icon) {
+        btn.addEventListener('click', function() {
+          if (audio.paused) {
+            audio.volume = 0.5;
+            audio.play();
+            icon.classList.remove('fa-volume-mute');
+            icon.classList.add('fa-volume-up');
+          } else {
+            audio.pause();
+            icon.classList.remove('fa-volume-up');
+            icon.classList.add('fa-volume-mute');
+          }
+        });
+      }
+    });
   </script>
 </body>
 </html>

@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hùng Vũ | Portfolio</title>
+
+  <!-- Google Fonts: Montserrat -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet" />
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+  <!-- AOS CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="css/main.css" />
+  <!-- EmailJS SDK v3 -->
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+</head>
+<body>
+    <!-- Background Video -->
+    <video id="bg-video" src="assets/background.mp4" autoplay loop playsinline></video>
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        var bgVideo = document.getElementById('bg-video');
+        if (bgVideo) {
+          bgVideo.volume = 0.3; // Giảm âm lượng xuống 15%
+        }
+      });
+    </script>
+    <!-- Navigation Menu -->
+    <nav id="main-nav">
+      <ul>
+        <li><a href="#home" id="home-btn" data-i18n="nav_home"><i class="fas fa-home"></i> Home</a></li>
+        <li><a href="#objective" data-i18n="nav_objective">Career Objective</a></li>
+        <li><a href="#education" data-i18n="nav_education">Education</a></li>
+        <li><a href="#experience" data-i18n="nav_experience">Work Experience</a></li>
+        <li><a href="#projects" data-i18n="nav_projects">Projects</a></li>
+        <li><a href="#tools" data-i18n="nav_tools">Tools</a></li>
+        <li><a href="#skills" data-i18n="nav_skills">Skills</a></li>
+        <li><a href="#soft-skills" data-i18n="nav_soft_skills">Soft Skills</a></li>
+        <li><a href="#contact" data-i18n="nav_contact">Contact</a></li>
+        <li id="lang-switcher-menu">
+          <button class="lang-btn" data-lang="en">EN</button> |
+          <button class="lang-btn" data-lang="vi">VI</button>
+        </li>
+      </ul>
+    </nav>
+    <style>
+      #lang-switcher, #lang-switcher-menu {
+        position: static !important;
+        display: inline-block;
+        background: none !important;
+        box-shadow: none !important;
+        padding: 0 !important;
+        margin-left: 12px;
+        z-index: auto !important;
+      }
+      #lang-switcher-menu .lang-btn {
+        background: none;
+        border: none;
+        font-weight: bold;
+        color: #fff;
+        cursor: pointer;
+        outline: none;
+        padding: 2px 4px;
+        font-size: 1em;
+        transition: color 0.2s;
+      }
+      #lang-switcher-menu .lang-btn:hover {
+        color: #ffb300;
+      }
+    </style>
+
+  <!-- Preloader -->
+  <div id="preloader">
+    <video id="loading-video" src="assets/loading.mp4" autoplay muted playsinline></video>
+  </div>
+
+  <!-- Hero / Header -->
+  <header id="hero">
+    <div class="container">
+      <img src="https://avatars.githubusercontent.com/u/79560590?v=4" alt="Hùng Vũ" class="avatar" data-aos="zoom-in" />
+      <h1 data-aos="fade-up">Vũ Trường Hùng</h1>
+      <div class="typed-text" data-aos="fade-up">
+        <span id="typed"></span>
+      </div>
+      <a href="assets/Hung-Vu.pdf" class="btn download-cv" download data-aos="fade-up">
+        <i class="fas fa-download"></i> Download CV
+      </a>
+      <ul class="social" data-aos="fade-up">
+        <li><a href="https://github.com/hungvu25" target="_blank"><i class="fab fa-github"></i></a></li>
+        <li><a href="https://hungvu.itch.io" target="_blank"><i class="fab fa-itch-io"></i></a></li>
+        <li><a href="mailto:vhung9958@gmail.com"><i class="fas fa-envelope"></i></a></li>
+        <li><a href="https://www.facebook.com/hungvu25"><i class="fab fa-facebook"></i></a></li>
+        <li><a href="https://www.tiktok.com/@voidseekersvn"><i class="fab fa-tiktok"></i></a></li>
+      </ul>
+      <button id="theme-toggle" aria-label="Toggle dark/light mode"><i class="fas fa-moon"></i></button>
+      <div class="scroll-down" data-aos="fade-up">
+        <i class="fas fa-arrow-down bounce"></i>
+      </div>
+    </div>
+  </header>
+
+  <!-- 🎯 Career Objective -->
+  <section id="objective" class="section">
+    <div class="container">
+      <h2 data-aos="fade-up" data-i18n="objective_title">🎯 Career Objective</h2>
+      <div class="objective-highlight" data-aos="fade-up" style="font-size:1.1em; margin-bottom: 0.7em;">
+        <span style="font-weight:bold; color:#ffb300;" data-i18n="objective_slogan">🎮 "Turning imagination into interactive worlds!"</span>
+      </div>
+      <ul class="objective-list" data-aos="fade-up" style="list-style: none; padding-left: 0;">
+        <li style="margin-bottom: 0.5em;" data-i18n="objective_1">🌟 <b>Passionate</b> about crafting unique, immersive game experiences that spark joy and curiosity.</li>
+        <li style="margin-bottom: 0.5em;" data-i18n="objective_2">🛠️ <b>Learning</b> game development fundamentals: programming, design, and storytelling.</li>
+        <li style="margin-bottom: 0.5em;" data-i18n="objective_3">🚀 <b>Driven</b> to grow, collaborate, and contribute to creative projects with a never-stop-learning mindset.</li>
+        <li data-i18n="objective_4">✨ <b>Goal:</b> Become a game developer who inspires and connects people through play!</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 🎓 Education -->
+  <section id="education" class="section">
+    <div class="container">
+      <h2 data-aos="fade-up" data-i18n="education_title">🎓 Education</h2>
+      <div class="education-card" data-aos="fade-up">
+        <h3 data-i18n="education_school">Ho Chi Minh City University of Transport (UTH)</h3>
+        <ul>
+          <li><strong data-i18n="education_major_label">Major:</strong> <span data-i18n="education_major">Information Technology</span></li>
+          <li><strong data-i18n="education_program_label">Program:</strong> <span data-i18n="education_program">Bachelor of Information Technology – High-Quality Program</span></li>
+          <li><strong data-i18n="education_institute_label">Institute:</strong> <span data-i18n="education_institute">High-Quality Training Institute</span></li>
+          <li><strong data-i18n="education_duration_label">Duration:</strong> <span data-i18n="education_duration">2023 – 2027</span></li>
+          <li><strong data-i18n="education_year_label">Year:</strong> <span data-i18n="education_year">Year 2 (since Nov 2023)</span></li>
+          <li><strong data-i18n="education_gpa_label">GPA:</strong> <span data-i18n="education_gpa">3.0 / 4.0</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- 💼 Work Experience -->
+  <section id="experience" class="section">
+    <div class="container">
+      <h2 data-aos="fade-up" data-i18n="experience_title">💼 Work Experience</h2>
+      <div class="experience-card" data-aos="fade-up">
+        <h3 data-i18n="experience_role">Freelance Game Developer</h3>
+        <p><strong data-i18n="experience_type_label">Type:</strong> <span data-i18n="experience_type">Personal Projects / Freelance (Remote)</span></p>
+        <p><strong data-i18n="experience_time_label">Time:</strong> <span data-i18n="experience_time">2024 – Present</span></p>
+        <ul>
+          <li data-i18n="experience_1">Built small 2D games using Unity and C#</li>
+          <li data-i18n="experience_2">Applied object-oriented programming and game mechanics</li>
+          <li data-i18n="experience_3">Worked independently to practice and apply core game development skills</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- 📁 Projects -->
+  <section id="projects" class="section">
+    <div class="container">
+      <h2 data-aos="fade-up" data-i18n="projects_title">📁 Projects</h2>
+      <div class="project-card" data-aos="fade-up" tabindex="0">
+        <img src="assets/void-seeker-thumb.jpg" alt="Void Seeker Screenshot" class="project-thumb" />
+        <h3 data-i18n="project_voidseeker_title">Void Seeker (2024)</h3>
+        <p data-i18n="project_voidseeker_desc">
+          A 2D roguelike top-down shooter made with Unity. Features: random enemy spawning,
+          item drops, core RPG elements.
+        </p>
+        <a href="https://hungvu.itch.io/void-seaker" target="_blank" class="btn" data-i18n="project_voidseeker_btn">
+          View on Itch.io
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 🧰 Tools -->
+  <section id="tools" class="section">
+    <div class="container">
+      <h2 data-aos="fade-up" data-i18n="tools_title"><i class="fas fa-toolbox"></i> Tools</h2>
+      <div class="tools-card experience-card" data-aos="fade-up">
+        <div class="tools-list">
+          <span class="tool" data-i18n="tool_unity"><i class="fab fa-unity"></i> Unity (C#)</span>
+          <span class="tool" data-i18n="tool_vscode"><i class="fas fa-code"></i> Visual Studio Code</span>
+          <span class="tool" data-i18n="tool_git"><i class="fab fa-github"></i> Git/GitHub</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 🧠 Skills -->
+  <section id="skills" class="section">
+    <div class="container">
+      <h2 data-aos="fade-up" data-i18n="skills_title">🧠 Skills</h2>
+      <div class="skills-layout" data-aos="fade-up">
+        <div class="skills-card">
+          <div class="skills-title" data-i18n="skills_programming"><i class="fas fa-code"></i> Programming Languages</div>
+          <div class="skills-badges">
+            <span class="badge" data-i18n="badge_csharp">C#</span>
+            <span class="badge" data-i18n="badge_python">Python</span>
+          </div>
+          <div class="skills-grid">
+            <div class="skill skill-csharp">
+              <span data-i18n="skill_csharp"><i class="fab fa-microsoft"></i> C#</span>
+              <div class="bar"><div class="progress" style="width: 80%;"></div></div>
+            </div>
+            <div class="skill skill-python">
+              <span data-i18n="skill_python"><i class="fab fa-python"></i> Python (basic)</span>
+              <div class="bar"><div class="progress" style="width: 40%;"></div></div>
+            </div>
+          </div>
+        </div>
+        <div class="skills-card">
+          <div class="skills-title" data-i18n="skills_game"><i class="fas fa-gamepad"></i> Game & Engine Skills</div>
+          <div class="skills-badges">
+            <span class="badge" data-i18n="badge_unity">Unity</span>
+            <span class="badge" data-i18n="badge_gamemech">Game mechanics</span>
+          </div>
+          <div class="skills-grid">
+            <div class="skill skill-unity">
+              <span data-i18n="skill_unity"><i class="fab fa-unity"></i> Unity script</span>
+              <div class="bar"><div class="progress" style="width: 75%;"></div></div>
+            </div>
+            <div class="skill skill-game">
+              <span data-i18n="skill_gamemech"><i class="fas fa-gamepad"></i> Game mechanics</span>
+              <div class="bar"><div class="progress" style="width: 70%;"></div></div>
+            </div>
+          </div>
+        </div>
+        <div class="skills-card">
+          <div class="skills-title" data-i18n="skills_foundation"><i class="fas fa-cubes"></i> Foundational Concepts</div>
+          <div class="skills-badges">
+            <span class="badge" data-i18n="badge_oop">OOP fundamentals</span>
+          </div>
+          <div class="skills-grid">
+            <div class="skill skill-oop">
+              <span data-i18n="skill_oop"><i class="fas fa-cubes"></i> OOP fundamentals</span>
+              <div class="bar"><div class="progress" style="width: 70%;"></div></div>
+            </div>
+          </div>
+        </div>
+        <div class="skills-card">
+          <div class="skills-title" data-i18n="skills_tools"><i class="fas fa-tools"></i> Tools & Frameworks</div>
+          <div class="skills-badges">
+            <span class="badge" data-i18n="badge_git">Git</span>
+            <span class="badge" data-i18n="badge_vscode">VS Code</span>
+          </div>
+          <div class="skills-grid">
+            <div class="skill skill-git">
+              <span><i class="fab fa-git-alt"></i> Git</span>
+              <div class="bar"><div class="progress" style="width: 60%;"></div></div>
+            </div>
+          </div>
+        </div>
+        <div class="skills-card">
+          <div class="skills-title" data-i18n="skills_soft"><i class="fas fa-users"></i> Soft Skills</div>
+          <div class="skills-badges">
+            <span class="badge" data-i18n="badge_teamwork">Teamwork</span>
+            <span class="badge" data-i18n="badge_selflearning">Self-learning</span>
+            <span class="badge" data-i18n="badge_timemanagement">Time Management</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 🤝 Soft Skills -->
+  <section id="soft-skills" class="section">
+    <div class="container">
+      <h2 data-aos="fade-up" data-i18n="soft_skills_title"><i class="fas fa-handshake"></i> Soft Skills</h2>
+      <div class="soft-skills-card experience-card" data-aos="fade-up">
+        <div class="soft-skills-list">
+          <span class="badge" data-i18n="soft_skill_teamwork">Teamwork</span>
+          <span class="badge" data-i18n="soft_skill_selflearning">Self-learning</span>
+          <span class="badge" data-i18n="soft_skill_timemanagement">Time Management</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ✉️ Contact -->
+  <section id="contact" class="section">
+    <div class="soft-skills-card experience-card" style="margin-top:32px; padding: 0;">
+      <div class="container" style="background: none; box-shadow: none; padding: 32px 28px 28px 28px; max-width: 480px; margin: 0 auto;">
+        <h2 data-aos="fade-up" data-i18n="contact_title"><i class="fas fa-envelope"></i> <span style="color:#00eaff;">Contact</span></h2>
+        <div class="contact-desc" data-aos="fade-up" style="margin-bottom:1em;color:#b3eaff;font-size:1.1em;" data-i18n="contact_desc">
+          <i class="fas fa-paper-plane"></i> Feel free to reach out for collaboration, questions, or just to say hi!
+        </div>
+        <form id="contact-form" data-aos="fade-up">
+          <div class="contact-input-group" data-aos="fade-up">
+            <input type="text" name="name" placeholder="Your Name" required data-i18n-placeholder="contact_name_placeholder" />
+          </div>
+          <div class="contact-input-group" data-aos="fade-up">
+            <input type="email" name="email" placeholder="Your Email" required data-i18n-placeholder="contact_email_placeholder" />
+          </div>
+          <div class="contact-input-group" data-aos="fade-up">
+            <textarea name="message" placeholder="Your Message" required data-i18n-placeholder="contact_message_placeholder"></textarea>
+          </div>
+          <button type="submit" class="btn contact-btn" data-aos="fade-up" data-i18n="contact_send_btn"><i class="fas fa-paper-plane"></i> Send</button>
+          <div id="contact-status" style="margin-top:1em;font-weight:bold;" data-aos="fade-up"></div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Modal for Project Details (optional) -->
+  <div id="project-modal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeProjectModal()">&times;</span>
+      <h2>Void Seeker Details</h2>
+      <div id="modal-body">
+        <p><strong>🕹️ Void-Seeker – Sinh tồn giữa địa ngục pixel</strong><br>
+        Void-Seeker là một tựa game bắn súng góc nhìn từ trên xuống (top-down shooter) mang phong cách pixel retro, nơi người chơi nhập vai một chiến binh đơn độc chống lại làn sóng bất tận của thây ma và sinh vật kỳ dị từ "khoảng không" (void).</p>
+        <p><strong>🎯 Lối chơi</strong><br>
+        Bạn sẽ bắt đầu với một khẩu súng và một lượng đạn giới hạn. Nhiệm vụ của bạn là:</p>
+        <ul>
+          <li>Tiêu diệt càng nhiều kẻ địch càng tốt để tăng chỉ số Kills.</li>
+          <li>Thu thập đạn dược rải rác trên bản đồ để tiếp tục chiến đấu.</li>
+          <li>Sống sót lâu nhất có thể trước những đợt tấn công ngày càng dữ dội từ các sinh vật dị hình.</li>
+        </ul>
+        <p><strong>⚔️ Tính năng nổi bật</strong><br></p>
+        <ul>
+          <li>Cơ chế chiến đấu đơn giản nhưng gây nghiện: di chuyển linh hoạt, ngắm và bắn chính xác để sinh tồn.</li>
+          <li>Đồ họa pixel độc đáo: phong cách tối màu tạo cảm giác u ám, rùng rợn và hấp dẫn.</li>
+          <li>Hiển thị HUD trực quan: dễ dàng theo dõi số kill, đạn còn lại và thanh máu trong thời gian thực.</li>
+          <li>Kẻ thù đa dạng: từ zombie đơn giản đến những sinh vật trồi lên từ lòng đất với hành vi khác nhau.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Hùng Vũ. All rights reserved.</p>
+  </footer>
+
+  <!-- JS Libraries -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <!-- Main Script -->
+  <script src="js/main.js"></script>
+  <script src="js/i18n.js"></script>
+  <script>
+    // Đặt mặc định ngôn ngữ là tiếng Anh nếu chưa có trong localStorage
+    document.addEventListener('DOMContentLoaded', function() {
+      if (!localStorage.getItem('lang')) {
+        localStorage.setItem('lang', 'en');
+      }
+    });
+    // Preloader logic
+    window.addEventListener('DOMContentLoaded', function() {
+      var video = document.getElementById('loading-video');
+      var preloader = document.getElementById('preloader');
+      var preloaderBlur = null;
+      var body = document.body;
+      if (preloader) {
+        preloaderBlur = document.createElement('div');
+        preloaderBlur.id = 'preloader-blur';
+        preloader.appendChild(preloaderBlur);
+      }
+      // Ẩn menu khi chưa xong preloader
+      body.classList.remove('menu-visible');
+      function showMenu() {
+        body.classList.add('menu-visible');
+      }
+      if (video) {
+        video.onended = function() {
+          video.style.transition = 'opacity 0.7s';
+          video.style.opacity = '0';
+          if (preloaderBlur) {
+            preloaderBlur.style.transition = 'opacity 0.7s';
+            preloaderBlur.style.opacity = '0';
+          }
+          setTimeout(function() {
+            preloader.classList.add('hide');
+            setTimeout(function() {
+              preloader.style.display = 'none';
+              showMenu();
+            }, 600);
+          }, 700);
+        };
+        video.onerror = function() {
+          video.style.transition = 'opacity 0.7s';
+          video.style.opacity = '0';
+          if (preloaderBlur) {
+            preloaderBlur.style.transition = 'opacity 0.7s';
+            preloaderBlur.style.opacity = '0';
+          }
+          setTimeout(function() {
+            preloader.classList.add('hide');
+            setTimeout(function() {
+              preloader.style.display = 'none';
+              showMenu();
+            }, 600);
+          }, 700);
+        };
+      } else {
+        showMenu();
+      }
+    });
+
+    // Highlight active menu item on scroll
+    document.addEventListener('DOMContentLoaded', function() {
+      const sections = [
+        'objective', 'education', 'experience', 'projects', 'tools', 'skills', 'soft-skills', 'contact'
+      ];
+      const navLinks = document.querySelectorAll('#main-nav a');
+      function onScroll() {
+        let scrollPos = window.scrollY || window.pageYOffset;
+        let offset = 80;
+        let found = false;
+        for (let i = sections.length - 1; i >= 0; i--) {
+          const sec = document.getElementById(sections[i]);
+          if (sec && sec.offsetTop - offset <= scrollPos) {
+            navLinks.forEach(link => link.classList.remove('active'));
+            navLinks[i].classList.add('active');
+            found = true;
+            break;
+          }
+        }
+        if (!found) navLinks.forEach(link => link.classList.remove('active'));
+      }
+      window.addEventListener('scroll', onScroll);
+      onScroll();
+    });
+
+    // Animate skill bars when in viewport
+    document.addEventListener('DOMContentLoaded', function() {
+      function animateSkillBars() {
+        var skills = document.querySelectorAll('.skill .progress');
+        skills.forEach(function(bar) {
+          var width = bar.dataset.width || bar.getAttribute('data-width') || bar.getAttribute('style').match(/width: (\d+)%/);
+          if (typeof width === 'object' && width && width[1]) width = width[1] + '%';
+          if (width) {
+            setTimeout(function() {
+              bar.style.width = width;
+            }, 200);
+          }
+        });
+      }
+      // Set all progress width to 0 initially and store real width in data-width
+      document.querySelectorAll('.skill .progress').forEach(function(bar) {
+        var match = bar.getAttribute('style').match(/width: (\d+)%/);
+        if (match) {
+          bar.dataset.width = match[1] + '%';
+        }
+        bar.style.width = '0';
+      });
+      // Trigger animation when skills section is visible
+      var skillsSection = document.getElementById('skills');
+      var animated = false;
+      function onScroll() {
+        if (!animated && skillsSection.getBoundingClientRect().top < window.innerHeight - 80) {
+          animateSkillBars();
+          animated = true;
+        }
+      }
+      window.addEventListener('scroll', onScroll);
+      onScroll();
+    });
+
+    function openProjectModal() {
+      var modal = document.getElementById('project-modal');
+      if (modal) modal.style.display = 'block';
+    }
+    function closeProjectModal() {
+      var modal = document.getElementById('project-modal');
+      if (modal) modal.style.display = 'none';
+    }
+    window.onclick = function(event) {
+      var modal = document.getElementById('project-modal');
+      if (event.target === modal) {
+        modal.style.display = 'none';
+      }
+    }
+  </script>
+</body>
+</html>

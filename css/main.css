@@ -467,6 +467,9 @@ footer {
   pointer-events: none;
   transition: opacity 0.5s;
 }
+#nav-toggle {
+  display: none;
+}
 body.menu-visible #main-nav {
   opacity: 1;
   pointer-events: auto;
@@ -765,7 +768,19 @@ body:not(.menu-visible) #bg-video {
     z-index: 1001;
   }
   /* Navigation */
+  #nav-toggle {
+    display: block;
+    position: absolute;
+    top: 8px;
+    right: 10px;
+    background: none;
+    border: none;
+    color: var(--text-light);
+    font-size: 1.6rem;
+    cursor: pointer;
+  }
   #main-nav ul {
+    display: none;
     flex-direction: column;
     gap: 0.5em;
     background: rgba(20,30,50,0.98);
@@ -774,6 +789,9 @@ body:not(.menu-visible) #bg-video {
     max-width: 100vw;
     overflow-x: auto;
     box-sizing: border-box;
+  }
+  #main-nav.open ul {
+    display: flex;
   }
   #main-nav li, #main-nav a {
     font-size: 1.1em;

@@ -135,3 +135,18 @@ window.addEventListener('click', (e) => {
     if (window.galleryInterval) clearInterval(window.galleryInterval);
   }
 });
+
+// Mobile navigation toggle
+document.addEventListener('DOMContentLoaded', () => {
+  const nav = document.getElementById('main-nav');
+  const toggle = document.getElementById('nav-toggle');
+  if (nav && toggle) {
+    toggle.addEventListener('click', () => {
+      nav.classList.toggle('open');
+    });
+    nav.querySelectorAll('a').forEach(link =>
+      link.addEventListener('click', () => nav.classList.remove('open'))
+    );
+  }
+});
+

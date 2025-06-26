@@ -189,6 +189,13 @@ function setLanguage(lang) {
       el.innerHTML = translations[lang][key];
     }
   });
+  // Update placeholders
+  document.querySelectorAll('[data-i18n-placeholder]').forEach(function(el) {
+    var key = el.getAttribute('data-i18n-placeholder');
+    if (translations[lang][key]) {
+      el.setAttribute('placeholder', translations[lang][key]);
+    }
+  });
   // Lưu ngôn ngữ vào localStorage
   localStorage.setItem('lang', lang);
 }

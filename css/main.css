@@ -143,7 +143,7 @@ body.light-theme {
   border: 1px solid var(--box-border);
   padding: 20px;
   border-radius: 10px;
-  transition: background 0.5s cubic-bezier(0.4,0,0.2,1), color 0.5s cubic-bezier(0.4,0,0.2,1), box-shadow 0.5s cubic-bezier(0.4,0,0.2,1), border 0.5s cubic-bezier(0.4,0,0.2,1);
+  transition: background 0.5s cubic-bezier(0.4,0,0.2,1), color 0.5s cubic-bezier(0.4,0,0.2,1), box-shadow 0.5s cubic-bezier(0.4,0,0.2,1), border 0.5s cubic-bezier(0.4,0,0.2,1), transform 0.3s;
 }
 .education-card ul {
   list-style: none;
@@ -158,7 +158,7 @@ body.light-theme {
   border: 1px solid var(--box-border);
   padding: 20px;
   border-radius: 10px;
-  transition: background 0.5s cubic-bezier(0.4,0,0.2,1), color 0.5s cubic-bezier(0.4,0,0.2,1), box-shadow 0.5s cubic-bezier(0.4,0,0.2,1), border 0.5s cubic-bezier(0.4,0,0.2,1);
+  transition: background 0.5s cubic-bezier(0.4,0,0.2,1), color 0.5s cubic-bezier(0.4,0,0.2,1), box-shadow 0.5s cubic-bezier(0.4,0,0.2,1), border 0.5s cubic-bezier(0.4,0,0.2,1), transform 0.3s;
 }
 
 /* Projects */
@@ -201,6 +201,11 @@ body.light-theme {
   transition: box-shadow 0.3s, transform 0.3s;
 }
 .tools-card:hover, .soft-skills-card:hover {
+  box-shadow: 0 0 48px 0 var(--accent-light), 0 0 0 2px var(--accent-dark);
+  transform: translateY(-6px) scale(1.03);
+}
+.education-card:hover,
+.experience-card:hover {
   box-shadow: 0 0 48px 0 var(--accent-light), 0 0 0 2px var(--accent-dark);
   transform: translateY(-6px) scale(1.03);
 }

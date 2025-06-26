@@ -196,6 +196,8 @@ function setLanguage(lang) {
       el.setAttribute('placeholder', translations[lang][key]);
     }
   });
+  // Update html lang attribute for styling
+  document.documentElement.setAttribute('lang', lang);
   // Lưu ngôn ngữ vào localStorage
   localStorage.setItem('lang', lang);
 }

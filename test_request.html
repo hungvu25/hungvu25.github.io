@@ -1,10 +1,51 @@
 <!DOCTYPE html>
 <html lang="vi">
-  <head><meta charset="UTF-8"><title>Đếm truy cập</title></head>
+  <head>
+    <meta charset="UTF-8">
+    <title>Đếm truy cập</title>
+    <style>
+      body {
+        background: linear-gradient(135deg, #f8ffae 0%, #43c6ac 100%);
+        min-height: 100vh;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        font-family: 'Segoe UI', 'Roboto', Arial, sans-serif;
+      }
+      h1 {
+        background: rgba(255,255,255,0.8);
+        padding: 32px 48px;
+        border-radius: 18px;
+        box-shadow: 0 8px 32px rgba(60,60,60,0.15);
+        font-size: 2.2rem;
+        color: #222;
+        margin: 0 0 24px 0;
+        letter-spacing: 1px;
+        text-align: center;
+      }
+      #counter {
+        color: #43c6ac;
+        font-weight: bold;
+        font-size: 2.5rem;
+        transition: color 0.3s, font-size 0.3s;
+        text-shadow: 0 2px 8px #b2fefa99;
+      }
+      h1:hover #counter {
+        color: #f7971e;
+        font-size: 3rem;
+      }
+      @media (max-width: 600px) {
+        h1 { font-size: 1.2rem; padding: 18px 8px; }
+        #counter { font-size: 1.5rem; }
+      }
+    </style>
+  </head>
   <body>
     <h1>Trang đã được truy cập <span id="counter">0</span> lần!</h1>
     <script>
-      fetch("https://api.countapi.xyz/hit/hungvu25.github.io/demo")
+      fetch("https://api.countapi.xyz/hit/hungvu25.github.io/test_request")
         .then(res => res.json())
         .then(data => {
           document.getElementById("counter").innerText = data.value;

@@ -2,7 +2,7 @@
 <html lang="vi">
 <head>
   <meta charset="UTF-8">
-  <title>Đếm lượt truy cập</title>
+  <title>Đếm truy cập</title>
 </head>
 <body>
   <h1>Trang đã được truy cập <span id="counter">0</span> lần!</h1>
@@ -13,8 +13,8 @@
       .then(data => {
         document.getElementById("counter").innerText = data;
       })
-      .catch(error => {
-        console.error("Lỗi gọi counter:", error);
+      .catch(err => {
+        console.error("Lỗi khi gọi counter.php:", err);
       });
   </script>
 </body>

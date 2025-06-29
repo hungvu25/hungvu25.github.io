@@ -1,21 +1,14 @@
 <!DOCTYPE html>
 <html lang="vi">
-<head>
-  <meta charset="UTF-8">
-  <title>Đếm truy cập</title>
-</head>
-<body>
-  <h1>Trang đã được truy cập <span id="counter">0</span> lần!</h1>
-
-  <script>
-    fetch("https://wordcrack.infy.uk/counter.php")
-      .then(response => response.text())
-      .then(data => {
-        document.getElementById("counter").innerText = data;
-      })
-      .catch(err => {
-        console.error("Lỗi khi gọi counter.php:", err);
-      });
-  </script>
-</body>
+  <head><meta charset="UTF-8"><title>Đếm truy cập</title></head>
+  <body>
+    <h1>Trang đã được truy cập <span id="counter">0</span> lần!</h1>
+    <script>
+      fetch("https://api.countapi.xyz/hit/hungvu25.github.io/demo")
+        .then(res => res.json())
+        .then(data => {
+          document.getElementById("counter").innerText = data.value;
+        });
+    </script>
+  </body>
 </html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Đếm lượt truy cập</title>
+</head>
+<body>
+  <h1>Trang đã được truy cập <span id="counter">0</span> lần!</h1>
+
+  <script>
+    fetch("https://wordcrack.infy.uk/counter.php")
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById("counter").innerText = data;
+      })
+      .catch(error => {
+        console.error("Lỗi gọi counter:", error);
+      });
+  </script>
+</body>
+</html>
